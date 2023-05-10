@@ -42,6 +42,7 @@
         <module>eureka-server</module>
         <module>eureka-client</module>
         <module>api-gateway</module>
-        <module>eureca-client-2</module>
+        <module>eureka-client2</module>
+        <module>git-config-server</module>
     </modules>
 </project>
