@@ -13,8 +13,11 @@ public class TestController {
     @Value("${eureka.instance.instance-id}")
     private String id;
 
+    @Value("${tempvar}")
+    private String tempvar;
+
     @GetMapping("/test")
     public ResponseEntity<String> getTestString(){
-        return ResponseEntity.ok(id);
+        return ResponseEntity.ok(id+" "+tempvar);
     }
 }
