@@ -1,5 +1,6 @@
 package ru.salavat.eurekaclient.controller;
 
+import com.salavat.entity.Attorney;
 import ru.salavat.eurekaclient.dto.AttorneyDTO;
 import ru.salavat.eurekaclient.service.AttorneyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +69,15 @@ public class AttorneyController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity deleteById(@PathVariable UUID id){
         attorneyService.delete(id);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
+    /**
+     * Удалить доверенности
+     */
+    @DeleteMapping("/deleteAll")
+    public ResponseEntity deleteAll(){
+        attorneyService.deleteAll();
         return new ResponseEntity(HttpStatus.OK);
     }
 }

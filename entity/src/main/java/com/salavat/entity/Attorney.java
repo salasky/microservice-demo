@@ -1,13 +1,16 @@
 package com.salavat.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -21,6 +24,8 @@ public class Attorney {
      * Id
      */
     @Id
+    @GeneratedValue(generator = "UUID")
+    @Column(name = "id", nullable = false)
     private UUID id;
 
     /**
@@ -28,18 +33,18 @@ public class Attorney {
      */
     @NotBlank
     @Size(max = 200)
+    @Column(name = "content")
     private String content;
-    @NotNull
-    private Date date;
-
-    public Attorney() {
-    }
 
     /**
      * Guid доверенности
      */
     @NotBlank
+    @Column(name = "guid")
     private UUID guid;
+
+    public Attorney() {
+    }
 
     public UUID getId() {
         return id;
@@ -65,11 +70,4 @@ public class Attorney {
         this.guid = guid;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 }

@@ -41,7 +41,7 @@ public class AttorneyServiceImpl implements AttorneyService {
     public AttorneyDTO getById(UUID id) {
         Optional<Attorney> optionalAttorney = attorneyRepository.findById(id);
         if(optionalAttorney.isPresent()){
-            return mapper.toDTO(attorneyRepository.findById(id).get());
+            return mapper.toDTO(optionalAttorney.get());
         }
         return null;
     }
@@ -61,5 +61,13 @@ public class AttorneyServiceImpl implements AttorneyService {
     @Override
     public void delete(UUID id) {
         attorneyRepository.deleteById(id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void deleteAll() {
+        attorneyRepository.deleteAll();
     }
 }

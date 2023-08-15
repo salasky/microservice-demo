@@ -37,4 +37,9 @@ public interface AttorneyService {
      */
     void delete(UUID id);
 
+    /**
+     * Удалить все доверенности
+     */
+    void deleteAll();
+
 }
