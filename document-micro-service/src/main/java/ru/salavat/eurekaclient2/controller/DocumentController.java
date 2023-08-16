@@ -29,7 +29,6 @@ public class DocumentController {
         Document document = new Document();
         document.setId(UUID.randomUUID());
         document.setContent("Content");
-        document.setAttorneyId(UUID.randomUUID());
         return ResponseEntity.ok("Document");
     }
 

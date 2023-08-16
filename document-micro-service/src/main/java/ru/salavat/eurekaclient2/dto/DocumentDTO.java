@@ -17,7 +17,7 @@ public class DocumentDTO {
     /**
      * Id доверенности
      */
-    private UUID attorneyId;
+    private UUID signatureId;
 
     public UUID getId() {
         return id;
@@ -35,11 +35,11 @@ public class DocumentDTO {
         this.content = content;
     }
 
-    public UUID getAttorneyId() {
-        return attorneyId;
+    public UUID getSignatureId() {
+        return signatureId;
     }
 
-    public void setAttorneyId(UUID attorneyId) {
-        this.attorneyId = attorneyId;
+    public void setSignatureId(UUID signatureId) {
+        this.signatureId = signatureId;
     }
 }

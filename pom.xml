@@ -16,6 +16,7 @@
         <module>attorney-micro-service</module>
         <module>api-gateway</module>
         <module>document-micro-service</module>
+        <module>signature-micro-service</module>
         <module>git-config-server</module>
         <module>entity</module>
     </modules>

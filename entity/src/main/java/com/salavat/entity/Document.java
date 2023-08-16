@@ -36,7 +36,7 @@ public class Document {
      * Id доверенности
      */
     @NotBlank
-    private UUID attorneyId;
+    private UUID signatureId;
 
     public Document() {
     }
@@ -57,11 +57,11 @@ public class Document {
         this.content = content;
     }
 
-    public UUID getAttorneyId() {
-        return attorneyId;
+    public UUID getSignatureId() {
+        return signatureId;
     }
 
-    public void setAttorneyId(UUID attorneyId) {
-        this.attorneyId = attorneyId;
+    public void setSignatureId(UUID signatureId) {
+        this.signatureId = signatureId;
     }
 }
