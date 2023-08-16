@@ -12,21 +12,28 @@ public interface AttorneyService {
     /**
      * Сохранение доверенности
      * @param attorney
-     * @return Attorney
+     * @return AttorneyDTO
      */
     AttorneyDTO save(AttorneyDTO attorney);
 
     /**
      * Получить доверенность по id
      * @param id доверенности
-     * @return Attorney
+     * @return AttorneyDTO
      */
     AttorneyDTO getById(UUID id);
 
     /**
+     * Получить доверенность по guid
+     * @param guid доверенности
+     * @return AttorneyDTO
+     */
+    AttorneyDTO findByGuid(UUID guid);
+
+    /**
      * Получить все доверенности
      *
-     * @return Collection<Attorney>
+     * @return Collection<AttorneyDTO>
      */
     Collection<AttorneyDTO> getAll();
 

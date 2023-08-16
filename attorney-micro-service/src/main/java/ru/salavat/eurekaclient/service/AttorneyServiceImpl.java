@@ -46,6 +46,15 @@ public class AttorneyServiceImpl implements AttorneyService {
         return null;
     }
 
+    @Override
+    public AttorneyDTO findByGuid(UUID guid) {
+        Optional<Attorney> optionalAttorney = attorneyRepository.findAttorneyByGuid(guid);
+        if(optionalAttorney.isPresent()){
+            return mapper.toDTO(optionalAttorney.get());
+        }
+        return null;
+    }
+
     /**
      * {@inheritDoc}
      */

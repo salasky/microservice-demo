@@ -1,6 +1,7 @@
 package ru.salavat.eurekaclient.controller;
 
 import com.salavat.entity.Attorney;
+import org.springframework.web.bind.annotation.RequestParam;
 import ru.salavat.eurekaclient.dto.AttorneyDTO;
 import ru.salavat.eurekaclient.service.AttorneyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,14 @@ public class AttorneyController {
     @GetMapping("/{id}")
     public ResponseEntity<AttorneyDTO> getById(@PathVariable UUID id){
         return new ResponseEntity<>(attorneyService.getById(id), HttpStatus.OK);
+    }
+
+    /**
+     * Получить доверенность по guid
+     */
+    @GetMapping("/guid/{guid}")
+    public ResponseEntity<AttorneyDTO> getByGuid(@PathVariable UUID guid){
+        return new ResponseEntity<>(attorneyService.findByGuid(guid), HttpStatus.OK);
     }
 
     /**
