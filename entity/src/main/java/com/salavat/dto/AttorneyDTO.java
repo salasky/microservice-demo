@@ -1,23 +1,26 @@
-package ru.salavat.eurekaclient2.dto;
+package com.salavat.dto;
+
 
 import java.util.UUID;
 
 /**
- * DTO для сущности {@link com.salavat.entity.Document}
+ * DTO для сущности Attorney
  */
-public class DocumentDTO {
+public class AttorneyDTO {
     /**
      * Id
      */
     private UUID id;
+
     /**
-     * Контент документа
+     * Контент доверенности
      */
     private String content;
+
     /**
-     * Id доверенности
+     * Guid доверенности
      */
-    private UUID signatureId;
+    private UUID guid;
 
     public UUID getId() {
         return id;
@@ -35,11 +38,11 @@ public class DocumentDTO {
         this.content = content;
     }
 
-    public UUID getSignatureId() {
-        return signatureId;
+    public UUID getGuid() {
+        return guid;
     }
 
-    public void setSignatureId(UUID signatureId) {
-        this.signatureId = signatureId;
+    public void setGuid(UUID guid) {
+        this.guid = guid;
     }
 }

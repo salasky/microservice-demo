@@ -1,9 +1,5 @@
 package ru.salavat.eurekaclient.controller;
 
-import com.salavat.entity.Attorney;
-import org.springframework.web.bind.annotation.RequestParam;
-import ru.salavat.eurekaclient.dto.AttorneyDTO;
-import ru.salavat.eurekaclient.service.AttorneyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -15,7 +11,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.salavat.eurekaclient.service.AttorneyService;
+import com.salavat.dto.AttorneyDTO;
 
+
+import java.text.MessageFormat;
 import java.util.Collection;
 import java.util.UUID;
 
@@ -53,7 +53,11 @@ public class AttorneyController {
      */
     @GetMapping("/{id}")
     public ResponseEntity<AttorneyDTO> getById(@PathVariable UUID id){
-        return new ResponseEntity<>(attorneyService.getById(id), HttpStatus.OK);
+        AttorneyDTO attorneyDTO = attorneyService.getById(id);
+        if(attorneyDTO != null){
+            return new ResponseEntity<>(attorneyDTO, HttpStatus.OK);
+        }
+        return new ResponseEntity(MessageFormat.format("Доверенность с id {0} не найдена",id), HttpStatus.NOT_ACCEPTABLE);
     }
 
     /**

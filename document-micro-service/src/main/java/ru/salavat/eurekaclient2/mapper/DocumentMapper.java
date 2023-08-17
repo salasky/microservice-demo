@@ -2,7 +2,7 @@ package ru.salavat.eurekaclient2.mapper;
 
 import com.salavat.entity.Document;
 import org.mapstruct.Mapper;
-import ru.salavat.eurekaclient2.dto.DocumentDTO;
+import com.salavat.dto.DocumentDTO;
 
 import java.util.Collection;
 

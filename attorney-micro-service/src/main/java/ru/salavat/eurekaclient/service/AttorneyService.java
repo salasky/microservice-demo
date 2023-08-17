@@ -1,6 +1,6 @@
 package ru.salavat.eurekaclient.service;
 
-import ru.salavat.eurekaclient.dto.AttorneyDTO;
+import com.salavat.dto.AttorneyDTO;
 
 import java.util.Collection;
 import java.util.UUID;

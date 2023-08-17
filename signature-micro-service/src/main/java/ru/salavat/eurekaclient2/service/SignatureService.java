@@ -1,6 +1,6 @@
 package ru.salavat.eurekaclient2.service;
 
-import ru.salavat.eurekaclient2.dto.SignatureDTO;
+import com.salavat.dto.SignatureDTO;
 
 import java.util.Collection;
 import java.util.UUID;

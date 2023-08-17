@@ -2,7 +2,7 @@ package ru.salavat.eurekaclient2.mapper;
 
 import com.salavat.entity.Signature;
 import org.mapstruct.Mapper;
-import ru.salavat.eurekaclient2.dto.SignatureDTO;
+import com.salavat.dto.SignatureDTO;
 
 import java.util.Collection;
 

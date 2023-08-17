@@ -3,7 +3,7 @@ package ru.salavat.eurekaclient2.service;
 import com.salavat.entity.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.salavat.eurekaclient2.dto.DocumentDTO;
+import com.salavat.dto.DocumentDTO;
 import ru.salavat.eurekaclient2.mapper.DocumentMapper;
 import ru.salavat.eurekaclient2.repo.DocumentRepository;
 

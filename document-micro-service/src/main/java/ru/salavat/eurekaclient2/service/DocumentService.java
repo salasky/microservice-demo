@@ -1,6 +1,6 @@
 package ru.salavat.eurekaclient2.service;
 
-import ru.salavat.eurekaclient2.dto.DocumentDTO;
+import com.salavat.dto.DocumentDTO;
 
 import java.util.Collection;
 import java.util.UUID;

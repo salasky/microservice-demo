@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.salavat.eurekaclient2.dto.DocumentDTO;
+import com.salavat.dto.DocumentDTO;
+
 import ru.salavat.eurekaclient2.service.DocumentService;
 
 import java.util.Collection;

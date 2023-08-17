@@ -1,13 +1,14 @@
 package ru.salavat.eurekaclient2.service;
 
-import com.salavat.entity.Document;
 import com.salavat.entity.Signature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.salavat.eurekaclient2.dto.SignatureDTO;
+import com.salavat.dto.SignatureDTO;
 import ru.salavat.eurekaclient2.mapper.SignatureMapper;
 import ru.salavat.eurekaclient2.repo.SignatureRepository;
+import ru.salavat.eurekaclient2.feign.AttorneyFeignClient;
 
+import java.text.MessageFormat;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -23,6 +24,9 @@ public class SignatureServiceImpl implements SignatureService {
     private SignatureRepository signatureRepository;
 
     @Autowired
+    private AttorneyFeignClient attorneyFeignClient;
+
+    @Autowired
     private SignatureMapper mapper;
 
     /**
@@ -30,6 +34,12 @@ public class SignatureServiceImpl implements SignatureService {
      */
     @Override
     public SignatureDTO save(SignatureDTO signatureDTO) {
+        if(attorneyFeignClient.findById(signatureDTO.getAttorneyId()) == null){
+            throw new RuntimeException("Микросервис Attorney не доступен");
+        }
+        if(attorneyFeignClient.findById(signatureDTO.getAttorneyId()).getBody() == null){
+            throw new RuntimeException(MessageFormat.format("Не найдена доверенность c id {0}", signatureDTO.getAttorneyId()));
+        }
         //логика фасадного сервиса
         Signature signature = mapper.toSignature(signatureDTO);
         return mapper.toDTO(signatureRepository.save(signature));

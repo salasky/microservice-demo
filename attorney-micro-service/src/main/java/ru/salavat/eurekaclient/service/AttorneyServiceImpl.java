@@ -1,11 +1,12 @@
 package ru.salavat.eurekaclient.service;
 
 import com.salavat.entity.Attorney;
-import ru.salavat.eurekaclient.dto.AttorneyDTO;
+import com.salavat.dto.AttorneyDTO;
 import ru.salavat.eurekaclient.mapper.AttorneyMapper;
 import ru.salavat.eurekaclient.repo.AttorneyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import java.util.Collection;
 import java.util.List;

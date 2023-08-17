@@ -1,7 +1,7 @@
 package ru.salavat.eurekaclient.mapper;
 
 import com.salavat.entity.Attorney;
-import ru.salavat.eurekaclient.dto.AttorneyDTO;
+import com.salavat.dto.AttorneyDTO;
 import org.mapstruct.Mapper;
 
 import java.util.Collection;
