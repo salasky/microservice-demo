@@ -4,15 +4,17 @@ import com.salavat.dto.AttorneyDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.UUID;
 
 @FeignClient(name = "eclient-attorney", fallback = AttorneyFeignClientFallback.class)
 public interface AttorneyFeignClient {
-    @GetMapping("/attorney/{id}")
-    ResponseEntity<AttorneyDTO> findById(@PathVariable UUID id);
+
+    @RequestMapping(value = "/attorney/{id}}", method = RequestMethod.GET)
+    ResponseEntity<AttorneyDTO> findById(@PathVariable(value = "id") UUID id);
 }
 
 @Component

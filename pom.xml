@@ -19,5 +19,6 @@
         <module>signature-micro-service</module>
         <module>git-config-server</module>
         <module>entity</module>
+        <module>operator-document-micro-service</module>
     </modules>
 </project>
