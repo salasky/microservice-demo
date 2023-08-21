@@ -1,13 +1,13 @@
 package ru.salavat.eurekaclient.mq;
 
 import org.springframework.messaging.MessageChannel;
-import org.springframework.messaging.MessageChannel;
+import org.springframework.cloud.stream.annotation.Output;
 
 /**
  * Интерфейс для создания канало
  */
 public interface OperatorDocumentBinding {
     String OUTPUT_CHANNEL = "operatorDocumentOutputChannel";
-    @OutPut(OUTPUT_CHANNEL)
+    @Output(OUTPUT_CHANNEL)
     MessageChannel operatorDocumentOutputChannel();
 }

@@ -4,6 +4,7 @@ import com.salavat.entity.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.salavat.dto.DocumentDTO;
+import org.springframework.transaction.annotation.Transactional;
 import ru.salavat.eurekaclient2.mapper.DocumentMapper;
 import ru.salavat.eurekaclient2.repo.DocumentRepository;
 
