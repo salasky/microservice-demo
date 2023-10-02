@@ -22,7 +22,7 @@ public class MessageProducer {
     public void generateDocument() {
         DocumentDTO documentDTO = new DocumentDTO();
         Random random = new Random();
-        documentDTO.setContent(String.valueOf(random.nextLong())+ "Contents");
+        documentDTO.setContent(random.nextLong()+ "Contents");
         documentDTO.setSignatureId(UUID.fromString("4868d938-57f8-42b8-8115-4bccaeb5b899"));
         // контейнер для добавления данных и headers
         Message message = MessageBuilder.withPayload(documentDTO).build();

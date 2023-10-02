@@ -4,7 +4,7 @@ import org.springframework.messaging.MessageChannel;
 import org.springframework.cloud.stream.annotation.Output;
 
 /**
- * Интерфейс для создания канало
+ * Интерфейс для создания каналов
  */
 public interface OperatorDocumentBinding {
     String OUTPUT_CHANNEL = "operatorDocumentOutputChannel";
